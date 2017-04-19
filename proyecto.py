@@ -21,7 +21,8 @@ def resultado():
 	print r.status_code
 	if r.status_code == 200:
 		js=json.loads(r.text)
-    
+		return template('template2.tpl', titulo=r)
+
 @route('/static/<filepath:path>')
 def server_static(filepath):
 	return static_file(filepath, root='static')
