@@ -17,11 +17,10 @@ def resultado():
 	urlbase="http://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
 	r=requests.get(urlbase+"geocode/json",params=payload)
-	print r
-	print r.status_code
+	r2=r.status_code
 	if r.status_code == 200:
 		js=json.loads(r.text)
-		return template('template2.tpl', titulo=r)
+		return template('template2.tpl', titulo=r, otro=r2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
