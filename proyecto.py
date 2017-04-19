@@ -8,11 +8,19 @@ import requests
 @route('/',method="get")
 def inicio():
 	    return template ('template.tpl')
+
 @route('/map',method="post")
 def resultado():
 	sitio = request.forms.get('Sitio')
     radio = request.forms.get('Radio')
+    key='AIzaSyBFRrsWet-kt-RxnkWVpUdeZ7ep4s1hdNc'
+    urlbase="http://maps.googleapis.com/maps/api/"
+    payload={"address":sitio,"sensor":"false"}
+    r=requests.get(urlbase+"geocode/json",params=payload)
 
+    if r.status_code == 200;
+    	js=json.loads(r.text)
+    
 @route('/static/<filepath:path>')
 def server_static(filepath):
 	return static_file(filepath, root='static')
