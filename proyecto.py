@@ -12,11 +12,11 @@ def inicio():
 @route('/map',method="post")
 def resultado():
 	key="AIzaSyBFRrsWet-kt-RxnkWVpUdeZ7ep4s1hdNc"
-	sitio = request.forms.get('sitio')
-    radio = request.forms.get('radio')
+	sit = request.forms.get('sitio')
+    rad = request.forms.get('radio')
     
     urlbase="http://maps.googleapis.com/maps/api/"
-    payload={"address":sitio,"sensor":"false"}
+    payload={"address":sit,"sensor":"false"}
     r=requests.get(urlbase+"geocode/json",params=payload)
     print r
     print r.status_code
