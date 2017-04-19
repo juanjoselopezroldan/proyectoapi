@@ -17,7 +17,7 @@
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1>The Search<span class="logo_colour">Food</span></h1>
-          <h2>G. Maps</h2>
+          <h2>GOOGLE MAPS</h2>
         </div>
         <div id="contact_details">
         </div>
