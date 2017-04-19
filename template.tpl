@@ -1,5 +1,5 @@
 %include('header.tpl')
-<div align="rigth">
+<div align="left">
 <img src="static/style/1.jpg" width="500" height="200" />
 <br>
 	<form action="/map" method="post">
