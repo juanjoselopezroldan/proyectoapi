@@ -3,7 +3,7 @@
 <img src="static/style/1.jpg" width="800" height="400" border="1" align="center" />
 <br>
 <br>
-<div align="center">
+<div align="rigth">
 
 	<form action="/map" method="post">
 		<label>Sitio:</label>
