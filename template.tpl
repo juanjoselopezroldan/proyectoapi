@@ -1,6 +1,6 @@
 %include('header.tpl')
 <div align="center">
-<img src="static/style/1.jpg" width="500" height="200" />
+<img src="static/style/1.jpg" width="500" height="200" border="1" />
 	<form action="/map" method="post">
 		<label>Sitio:</label>
 		<input type="text" name="sitio" required/>
