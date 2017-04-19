@@ -1,4 +1,5 @@
 %include('header.tpl')
+<img src="static/style/1.jpg"/>
 <br>
 	<form action="/map" method="post">
 		<label>Sitio (ej: Factory Sevilla):</label>
