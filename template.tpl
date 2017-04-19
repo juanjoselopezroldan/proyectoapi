@@ -1,7 +1,7 @@
 %include('header.tpl')
 <br>
 	<form action="/map" method="post">
-		<label>Sitio (Calle/Lugar"ej: Cineapolis dos hermanas"):</label>
+		<label>Sitio (ej: Cineapolis dos hermanas):</label>
 		<input type="text" name="sitio" required/>
 		<label>Radio (Def. en metros):</label>
 		<input type="text" name="radio" required/>
