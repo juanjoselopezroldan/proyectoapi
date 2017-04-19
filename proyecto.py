@@ -10,7 +10,8 @@ def inicio():
 	    return template ('template.tpl')
 @route('/map',method="post")
 def resultado():
-
+	sitio = request.forms.get('Sitio')
+    radio = request.forms.get('Radio')
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
