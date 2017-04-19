@@ -17,8 +17,9 @@ def resultado():
     urlbase="http://maps.googleapis.com/maps/api/"
     payload={"address":sitio,"sensor":"false"}
     r=requests.get(urlbase+"geocode/json",params=payload)
-
-    if r.status_code == 200;
+    print r
+    print r.status_code
+    if r.status_code == 200:
     	js=json.loads(r.text)
     
 @route('/static/<filepath:path>')
