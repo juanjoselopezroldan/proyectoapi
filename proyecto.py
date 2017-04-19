@@ -19,10 +19,10 @@ def resultado():
 	r=requests.get(urlbase+"geocode/json",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
-		for i in js["geometry"]["location"]:
-			a=i["lat"]
-			b=i["lng"]
-		return template('template2.tpl', titulo=a, otro=b)
+		for i in js["results"]:
+			lat=i["geometry"]["location"]["lat"]
+			lng=i["geometry"]["location"]["lng"]
+		return template('template2.tpl', titulo=lat, otro=lng)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
