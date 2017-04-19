@@ -11,9 +11,9 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	sitio = request.forms.get('Sitio')
-    radio = request.forms.get('Radio')
-    key='AIzaSyBFRrsWet-kt-RxnkWVpUdeZ7ep4s1hdNc'
+	sitio = request.forms.get('sitio')
+    radio = request.forms.get('radio')
+    key="AIzaSyBFRrsWet-kt-RxnkWVpUdeZ7ep4s1hdNc"
     urlbase="http://maps.googleapis.com/maps/api/"
     payload={"address":sitio,"sensor":"false"}
     r=requests.get(urlbase+"geocode/json",params=payload)
