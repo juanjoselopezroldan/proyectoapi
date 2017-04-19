@@ -1,5 +1,5 @@
 %include('header.tpl')
-<div align="left">
+<p><div align="center">
 <img src="static/style/1.jpg" width="500" height="200" />
 <br>
 	<form action="/map" method="post">
@@ -9,6 +9,6 @@
 		<input type="text" name="radio" required/>
 		<input type="submit" value="Buscar">
 	</form>
-</div>
+</div></p>
 <br>
 %include('footer.tpl')
