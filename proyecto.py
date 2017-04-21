@@ -13,6 +13,7 @@ def inicio():
 def resultado():
 	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
 	sit = request.forms.get('sitio')
+	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
@@ -23,7 +24,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		payload2={"location":lat_long,"language":"es","radius":rad,"types":"restaurant","keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
+		payload2={"location":lat_long,"language":"es","radius":rad,"types":lug,"keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
 		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
 
 		if r2.status_code==200:
