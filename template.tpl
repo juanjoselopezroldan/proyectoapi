@@ -8,6 +8,8 @@
 	<form action="/map" method="post">
 		<label>Sitio:</label>
 		<input type="text" name="sitio" required/><br>
+		<label> Radio (metros):</label>
+		<input type="text" name="radio" required/><br>
 		Lugar:
 							<select name="lugar">
 								<option value="restaurant">Restaurante</option>
@@ -17,8 +19,7 @@
 								<option value="hospital">Hospital</option>
 								<option value="police">Policia</option>
 							</select><br>
-		<label> Radio (metros):</label>
-		<input type="text" name="radio" required/><br>
+		
 		<input type="submit" value="Buscar">
 	</form>
 
