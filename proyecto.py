@@ -11,7 +11,7 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	key="AIzaSyBFRrsWet-kt-RxnkWVpUdeZ7ep4s1hdNc"
+	key="AIzaSyDZqlVgDu5fjMx0kZd9lQ2FBVfrpgEACwU"
 	sit = request.forms.get('sitio')
 	rad = request.forms.get('radio')
 	urlbase="http://maps.googleapis.com/maps/api/"
@@ -23,14 +23,12 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		payload2={"location":lat_long,"radius":rad,"type":"restaurant","sensor":"false","key":key}
+		payload2={"location":lat_long,"language":"es","radius":rad,"types":"restaurant","keyword":"cruise","sensor":"false","key":key}
 		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
 
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
-			for resultado in js2:
-				resultado
-		return template('template2.tpl', titulo=resultado)
+		return template('template2.tpl', titulo=js2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
