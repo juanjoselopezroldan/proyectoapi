@@ -18,8 +18,7 @@
 								<option value="movie_theater">Cine</option>
 								<option value="hospital">Hospital</option>
 								<option value="police">Policia</option>
-							</select><br>
-		
+							</select>
 		<input type="submit" value="Buscar">
 	</form>
 
