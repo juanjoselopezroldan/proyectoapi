@@ -22,6 +22,7 @@ def resultado():
 		for i in js["results"]:
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
+		lat_long=str(lat)+","+str(lng)
 		return template('template2.tpl', titulo=lat, otro=lng)
 
 @route('/static/<filepath:path>')
