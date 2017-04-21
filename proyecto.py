@@ -27,8 +27,8 @@ def resultado():
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":lug,"keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
 		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
 
-		nombres={}
-		calles={}
+		nombres=[]
+		calles=[]
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			for i2 in js2["results"]:
