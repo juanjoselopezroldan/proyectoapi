@@ -11,7 +11,7 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	key="AIzaSyDZqlVgDu5fjMx0kZd9lQ2FBVfrpgEACwU"
+	key="AIzaSyAlzpHRWdL4ARb0BGSGZk2RfL59o86jg2Y"
 	sit = request.forms.get('sitio')
 	rad = request.forms.get('radio')
 	urlbase="http://maps.googleapis.com/maps/api/"
