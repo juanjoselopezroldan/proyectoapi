@@ -24,7 +24,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":"restaurant","keyword":"cruise","sensor":"false","key":key}
-		r2=requests.post(urlbase+"place/nearbysearch/json",params=payload2)
+		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
 
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
