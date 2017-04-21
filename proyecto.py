@@ -15,7 +15,7 @@ def resultado():
 	sit = request.forms.get('sitio')
 	rad = request.forms.get('radio')
 	urlbase="http://maps.googleapis.com/maps/api/"
-	payload={"address":sit,"sensor":"false","libraries":"places"}
+	payload={"address":sit,"sensor":"false"}
 	r=requests.get(urlbase+"geocode/js",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
