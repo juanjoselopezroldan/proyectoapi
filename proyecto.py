@@ -23,6 +23,13 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
+		payload2={"location":lat_long,"radius":rad,"type":"restaurant","sensor":"false","key":key}
+		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
+
+		if r2.status_code==200:
+			js2=json.loads(r2.text)
+			for resultado in js2:
+				
 		return template('template2.tpl', titulo=lat, otro=lng)
 
 @route('/static/<filepath:path>')
