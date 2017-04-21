@@ -14,9 +14,9 @@ def resultado():
 	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
 	sit = request.forms.get('sitio')
 	rad = request.forms.get('radio')
-	urlbase="http://maps.googleapis.com/maps/api/"
+	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
-	r=requests.get(urlbase+"geocode/js",params=payload)
+	r=requests.get(urlbase+"geocode/json",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
 		for i in js["results"]:
@@ -24,7 +24,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":"restaurant","keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
-		r2=requests.get(urlbase+"place/nearbysearch/js",params=payload2)
+		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
 
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
