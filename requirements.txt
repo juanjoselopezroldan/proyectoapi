@@ -6,3 +6,4 @@ packaging
 pytz
 requests
 six
+os
