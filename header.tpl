@@ -16,7 +16,7 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>The Search<span class="logo_colour">Food</span></h1>
+          <h1>The Power<span class="logo_colour">Search</span></h1>
           <h2>GOOGLE MAPS</h2>
         </div>
         <div id="contact_details">
@@ -24,7 +24,7 @@
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li class="selected"><a href="..">Recargar Pagina</a></li>
+          <li class="selected"><a href="..">Volver</a></li>
         </ul>
       </div>
     </div>
