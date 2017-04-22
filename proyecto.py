@@ -37,7 +37,7 @@ def resultado():
 				nombres.append(i2["name"])
 				calles.append(i2["vicinity"])
 				fotos.append(i2["html_attributions"])
-		return template('template2.tpl', sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, foto=fotos, js2=js2)
+		return template('template2.tpl', latitud=lat, longitud=lng, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, foto=fotos, js2=js2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
