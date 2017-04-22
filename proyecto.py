@@ -26,15 +26,16 @@ def resultado():
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":lug,"keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
 		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
-
+		cont=0
 		nombres=[]
 		calles=[]
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			for i2 in js2["results"]:
+				cont=cont+1
 				nombres.append(i2["name"])
 				calles.append(i2["vicinity"])
-		return template('template2.tpl', sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles)
+		return template('template2.tpl', sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):

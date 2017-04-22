@@ -1,5 +1,6 @@
 %include('header.tpl')
-<h1>Estos son los resultados de la busqueda realizada cumpliendo los siguientes parametros:</h1><p>Busqueda en {{sit}} teniendo como tipo de lugar {{lug}} en una apertura de radio de {{rad}} Metros</p>
+<h1>Estos son los resultados de la busqueda realizada cumpliendo los siguientes parametros:</h1><h3>Busqueda en {{sit}} teniendo como tipo de lugar {{lug}} en una apertura de radio de {{rad}} Metros</h3>
+<p>Numero de resultados: {{cont}}</p>
 <br>
 
 	% for a,e in zip(nombre,calle):

@@ -16,8 +16,6 @@
 								<option value="museum">Museo</option>
 								<option value="shopping_mall">Centro comercial</option>
 								<option value="movie_theater">Cine</option>
-								<option value="hospital">Hospital</option>
-								<option value="police">Policia</option>
 							</select><br><br><br>
 		<input type="submit" value="Buscar">
 	</form>
