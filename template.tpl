@@ -12,10 +12,15 @@
 		<input type="text" name="radio" required/><br>
 		Lugar:
 							<select name="lugar">
-								<option value="restaurant">Restaurante</option>
-								<option value="museum">Museo</option>
-								<option value="shopping_mall">Centro comercial</option>
-								<option value="movie_theater">Cine</option>
+								<option value="restaurant">Restaurantes</option>
+								<option value="museum">Museos</option>
+								<option value="shopping_mall">Centro comerciales</option>
+								<option value="movie_theater">Cines</option>
+								<option value="airport">Aeropuertos</option>
+								<option value="university">Universidades</option>
+								<option value="food">Comida</option>
+								<option value="school">Colegios</option>
+								<option value="store">Tiendas</option>
 							</select><br><br><br>
 		<input type="submit" value="Buscar">
 	</form>
