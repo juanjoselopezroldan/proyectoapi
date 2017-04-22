@@ -35,7 +35,7 @@ def resultado():
 				cont=cont+1
 				nombres.append(i2["name"])
 				calles.append(i2["vicinity"])
-		return template('template2.tpl', sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont)
+		return template('template2.tpl', sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, js2=js2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
