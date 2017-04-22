@@ -1,0 +1,8 @@
+appdirs
+bottle
+gunicorn
+lxml
+packaging
+pytz
+requests
+six
