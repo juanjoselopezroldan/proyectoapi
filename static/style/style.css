@@ -237,6 +237,11 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 { color: #CDC090;
   text-decoration: none;}
 
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
 .search
 { color: #5D5D5D; 
   border: 1px solid #BBB; 
