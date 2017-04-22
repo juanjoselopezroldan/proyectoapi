@@ -1,1 +1,1 @@
-web: python ./eventfull.py $PORT
+web: python ./proyecto.py $PORT
