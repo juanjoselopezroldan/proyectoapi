@@ -18,9 +18,10 @@
 								<option value="movie_theater">Cines</option>
 								<option value="airport">Aeropuertos</option>
 								<option value="university">Universidades</option>
-								<option value="food">Comida</option>
+								<option value="establishment">Establecimientos</option>
 								<option value="school">Colegios</option>
 								<option value="store">Tiendas</option>
+								<option value="point_of_interest">Sitios de interes</option>
 							</select><br><br><br>
 		<input type="submit" value="Buscar">
 	</form>
