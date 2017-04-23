@@ -26,7 +26,7 @@ def resultado():
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":lug,"keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
 		r2=requests.get(urlbase+"place/nearbysearch/json",params=payload2)
-		cont=0
+		cont=1
 		cont2=[1]
 		nombres=[]
 		calles=[]
