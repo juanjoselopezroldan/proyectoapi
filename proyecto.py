@@ -11,7 +11,7 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
+	key=os.environ['key']
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
