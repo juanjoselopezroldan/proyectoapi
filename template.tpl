@@ -1,6 +1,6 @@
 %include('header.tpl')
 
-<img src="static/style/1.jpg" width="400" height="200" border="15" align="left" />
+<img src="static/style/1.jpg" width="200" height="200" border="15" align="left" />
 <br>
 <br>
 <div align="rigth">
