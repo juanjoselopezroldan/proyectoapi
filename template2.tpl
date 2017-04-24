@@ -9,23 +9,18 @@
 		<li>Calle: {{e}}</li>
 
 		<h3>{{a}}</h3>
-    	<div id="map"></div>
-    	<script>
-      	function initMap() {
-        var uluru = {lat: {{lo}}, lng: {{la}} };
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+   	<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: {{la}}, lng: {{lo}}},
+          zoom: 8
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-        }
-    	</script>
-    	<script async defer
-    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70&callback=initMap">
-   		 </script>
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70&callback=initMap"
+    async defer></script>
 
 
 		<br>
