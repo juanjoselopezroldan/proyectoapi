@@ -19,8 +19,9 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70&callback=initMap"
-    async defer></script>
+    <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70&libraries=geometry,places">
+	</script>
 
 
 		<br>
