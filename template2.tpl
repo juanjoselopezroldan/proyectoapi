@@ -44,6 +44,7 @@
 
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+        <div id="map"></div>
 
 	%end
 	<h1>Mapa de la ciudad donde que se esta realizando la busqueda.</h1>
