@@ -13,24 +13,4 @@
 	<h1>Mapa de la ciudad donde que se esta realizando la busqueda.</h1>
 	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12698.178238023742!2d{{longitud}}!3d{{latitud}}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1492853273775" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-
-	  <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: {{latitud}}, lng: {{longitud}}};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70&callback=initMap">
-    </script>
-
 %include('footer.tpl')
