@@ -43,7 +43,7 @@ def resultado():
 				longitud.append(i2["geometry"]["location"]["lat"])
 
 			cont=cont-1
-		return template('template2.tpl',js2=js2, latitud=lat, longitud=lng, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
+		return template('template2.tpl',js2=js2, latitud=latitud, longitud=longitud, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
