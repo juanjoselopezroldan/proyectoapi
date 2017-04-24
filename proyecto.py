@@ -39,6 +39,9 @@ def resultado():
 				cont2.append(cont)
 				nombres.append(i2["name"])
 				calles.append(i2["vicinity"])
+				latitud.append(i2["geometry"]["location"]["lat"])
+				longitud.append(i2["geometry"]["location"]["lat"])
+
 			cont=cont-1
 		return template('template2.tpl',js2=js2, latitud=latitud, longitud=longitud, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
