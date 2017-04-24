@@ -8,7 +8,6 @@
 		<h5>Nombre: {{a}}</h5>
 		<h6>Calle: {{e}}</h6>
 		<img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=19&size=400x400&maptype=roadmap">
-		
 		<br>
 	%end
 %include('footer.tpl')
