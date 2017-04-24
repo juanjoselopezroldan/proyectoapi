@@ -30,7 +30,8 @@ def resultado():
 		cont2=[1]
 		nombres=[]
 		calles=[]
-		abierto=[]
+		latitud=[]
+		longitud=[]
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			for i2 in js2["results"]:
@@ -39,7 +40,7 @@ def resultado():
 				nombres.append(i2["name"])
 				calles.append(i2["vicinity"])
 			cont=cont-1
-		return template('template2.tpl', latitud=lat, longitud=lng, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
+		return template('template2.tpl',js2=js2, latitud=latitud, longitud=longitud, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
