@@ -3,11 +3,12 @@
 <h4>Numero de resultados encontrados: {{cont}}</h4>
 <br>
 
-	% for a,e,c in zip(nombre,calle,cont2):
+	% for a,e,c,la,lo in zip(nombre,calle,cont2,latitud,longitud):
 	<h4>Resultado numero {{c}}</h4>
 		<h5>Nombre: {{a}}</h5>
 		<h6>Calle: {{e}}</h6>
+		<img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=19&size=400x400&maptype=roadmap">
+		
 		<br>
 	%end
-	<p>{{js2}}</p>
 %include('footer.tpl')
