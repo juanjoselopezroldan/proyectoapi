@@ -9,7 +9,7 @@
 		<label>Sitio:</label>
 		<input type="text" name="sitio" required/><br>
 		<label> Radio (metros):</label>
-		<input type="text" name="radio" required/><br>
+		<input type="radio" name="radio" required/><br>
 		Lugar:
 							<select name="lugar">
 								<option value="restaurant">Restaurantes</option>
