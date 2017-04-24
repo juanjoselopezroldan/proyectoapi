@@ -11,13 +11,14 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	key=os.environ['key']
+	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
+	#os.environ['key']
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
-	r=requests.get(urlbase+"geocode/json",params=payload)
+	r=requests.get(urlbase+"geocode/js",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
 		for i in js["results"]:
@@ -25,11 +26,10 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"types":lug,"keyword":"cruise","sensor":"false","key":key,"libraries":"places"}
-		r2=requests.post(urlbase+"place/nearbysearch/json",params=payload2)
+		r2=requests.post(urlbase+"place/nearbysearch/js",params=payload2)
 		cont=1
 		cont2=[1]
 		nombres=[]
-		nombres2=[]
 		calles=[]
 		latitud=[]
 		longitud=[]
@@ -39,13 +39,12 @@ def resultado():
 				cont=cont+1
 				cont2.append(cont)
 				nombres.append(i2["name"])
-				nombres2.append(i2["name"]).replace(" ","+")
 				calles.append(i2["vicinity"])
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lat"])
 
 			cont=cont-1
-		return template('template2.tpl',js2=js2, nombre2=nombres2, latitud=latitud, longitud=longitud, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
+		return template('template2.tpl',js2=js2, latitud=latitud, longitud=longitud, sit=sit, lug=lug, rad=rad, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):

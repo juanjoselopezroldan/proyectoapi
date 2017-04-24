@@ -3,7 +3,7 @@
 <h4>Numero de resultados encontrados: {{cont}}</h4>
 <br>
 
-	% for a,e,c,n in zip(nombre,calle,cont2,nombre2):
+	% for a,e,c in zip(nombre,calle,cont2):
 	<h6>Resultado numero {{c}}</h6>
 		<li>Nombre: {{a}}</li>
 		<li>Calle: {{e}}</li>

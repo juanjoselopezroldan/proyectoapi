@@ -238,6 +238,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   text-decoration: none;}
 
  #map {
+    width: 100%;
     height: 100%;
   }
 
