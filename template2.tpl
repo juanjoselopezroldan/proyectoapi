@@ -12,7 +12,7 @@
     	<div id="map"></div>
     	<script>
       	function initMap() {
-        var uluru = {lat: {{la}}, lng: {{lo}} };
+        var uluru = {lat: {{lo}}, lng: {{la}} };
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
@@ -30,6 +30,5 @@
 
 		<br>
 	%end
-	<h1>Mapa de la ciudad donde que se esta realizando la busqueda.</h1>
 	<p>{{js2}}</p>
 %include('footer.tpl')
