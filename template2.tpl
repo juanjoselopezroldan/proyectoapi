@@ -7,7 +7,7 @@
 	<h4>Resultado numero {{c}}</h4>
 		<h5>Nombre: {{a}}</h5>
 		<h6>Calle: {{e}}</h6>
-		<img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=18&size=400x400&maptype=roadmap&key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70">
+		<img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70">
 		<br>
 		<br>
 	%end
