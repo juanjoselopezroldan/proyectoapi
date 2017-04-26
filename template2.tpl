@@ -11,5 +11,6 @@
 		<br>
 		<br>
 	%end
+	{{siguiente}}
 	{{js2}}
 %include('footer.tpl')
