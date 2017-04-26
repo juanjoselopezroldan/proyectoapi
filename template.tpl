@@ -12,8 +12,6 @@
 		<input type="text" name="lugar" required/><br>
 		<label> Radio (Ind. en metros):</label>
 		<input type="number" min='1' name="radio" required/><br>
-		<label> N. de resultados:</label>
-		<input type="number" min='1' name="cant" required/><br>
 		<br><br><br>
 		<input type="submit" value="Buscar">
 	</form>

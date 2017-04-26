@@ -15,7 +15,6 @@ def resultado():
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
-	cantidad =  request.forms.get('cant')
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
 	r=requests.get(urlbase+"geocode/json",params=payload)
@@ -25,7 +24,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key, "maxResults":cantidad}
+		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 		r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 		cont=1
 		cont2=[1]
