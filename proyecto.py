@@ -35,11 +35,11 @@ def resultado():
 		siguiente="nada"
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
+			for i3 in js2:
+				if i3 = "next_page_token":
+					siguiente=i3["next_page_token"]
 			for i2 in js2["results"]:
 				cont=cont+1
-				if i2 = "next_page_token":
-					siguiente=i2["next_page_token"]
-
 				cont2.append(cont)
 				nombres.append(i2["name"])
 				calles.append(i2["formatted_address"])
