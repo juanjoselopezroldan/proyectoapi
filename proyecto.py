@@ -48,7 +48,7 @@ def resultado():
 		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
 #@route ('/map/<token>)'
-#def resultado2():
+#def resultado2(<token>):
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
