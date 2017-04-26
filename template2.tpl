@@ -11,8 +11,11 @@
 		<br>
 		<br>
 	%end
-	<form action="/map/{{siguiente}}" method="post" style="float: left">
-		<input type="submit" value="siguiente">
-	</form>
+	%if {{siguiente}}!="nada":
+		<form action="/map/<token>" method="post" style="float: left">
+			<input type="submit" value="siguiente">
+		</form>
+	%end
+
 	{{js2}}
 %include('footer.tpl')

@@ -47,8 +47,12 @@ def resultado():
 			cont=cont-1
 		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
-#@route ('/map/<token>)'
+#@route ('/map/<token>, method="post")'
 #def resultado2(<token>):
+#	payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key, "pagetoken":siguiente}
+#	r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
+
+
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
