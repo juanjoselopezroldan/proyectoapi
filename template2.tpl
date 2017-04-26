@@ -11,6 +11,8 @@
 		<br>
 		<br>
 	%end
-	{{siguiente}}
+	<form action="/map/{{siguiente}}" method="post" style="float: left">
+		<input type="submit" value="siguiente">
+	</form>
 	{{js2}}
 %include('footer.tpl')
