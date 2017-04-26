@@ -51,7 +51,25 @@ def resultado():
 #def resultado2(<token>):
 #	payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key, "pagetoken":siguiente}
 #	r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
-
+#		cont=1
+#		cont2=[1]
+#		nombres=[]
+#		calles=[]
+#		latitud=[]
+#		longitud=[]
+#		siguiente="nada"
+#		if r2.status_code==200:
+#			js2=json.loads(r2.text)
+#			if js2.has_key("next_page_token"):
+#				siguiente=js2["next_page_token"]
+#			for i2 in js2["results"]:
+#				cont=cont+1
+#				cont2.append(cont)
+#				nombres.append(i2["name"])
+#				calles.append(i2["formatted_address"])
+#				latitud.append(i2["geometry"]["location"]["lat"])
+#				longitud.append(i2["geometry"]["location"]["lng"])
+#			cont=cont-1
 
 
 @route('/static/<filepath:path>')
