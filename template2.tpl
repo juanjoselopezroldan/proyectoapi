@@ -10,9 +10,9 @@
 		<img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key=AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70">
 		<br>
 		<br>
-	%end
-	%if {{siguiente}}!="nada":
-		<form action="/map/<token>" method="post" style="float: left">
+
+	if {{siguiente}}!="nada":
+		<form action="/map/token" method="post" style="float: left">
 			<input type="submit" value="siguiente">
 		</form>
 	%end
