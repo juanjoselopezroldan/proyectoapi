@@ -15,7 +15,6 @@ def resultado():
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
-	cantidad =  request.forms.get('cant')
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
 	r=requests.get(urlbase+"geocode/json",params=payload)
