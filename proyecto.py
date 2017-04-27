@@ -12,7 +12,7 @@ def inicio():
 @route('/map',method="post")
 @route('/map/<token>',method="post")
 def resultado(token=''):
-		if token=='token':
+	if token=='token':
 		pagina=request.forms.get('next')
 		payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":pagina}
 		r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
