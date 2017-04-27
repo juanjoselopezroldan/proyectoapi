@@ -34,6 +34,11 @@ def resultado(token=''):
 		latitud=[]
 		longitud=[]
 		siguiente="nada"
+		if token=='token':
+			key=os.environ['key']
+			pagina=request.forms.get('next')
+			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":pagina}
+			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			if js2.has_key("next_page_token"):
