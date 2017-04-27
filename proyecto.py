@@ -34,24 +34,23 @@ def resultado(token=''):
 		latitud=[]
 		longitud=[]
 		siguiente="nada"
-		if token=='token':
-			key=os.environ['key']
-			pagina=request.forms.get('next')
-			payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":pagina}
-			r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
-			if r3.status_code==200:
-				js3=json.loads(r2.text)
-				if js3.has_key("next_page_token"):
-					siguiente=js3["next_page_token"]
-				for i3 in js3["results"]:
-					cont=cont+1
-					cont2.append(cont)
-					nombres.append(i2["name"])
-					calles.append(i2["formatted_address"])
-					latitud.append(i2["geometry"]["location"]["lat"])
-					longitud.append(i2["geometry"]["location"]["lng"])
-				cont=cont-1
-			return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
+	if token=='token':
+		pagina=request.forms.get('next')
+		payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":pagina}
+		r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
+		if r3.status_code==200:
+			js3=json.loads(r2.text)
+			if js3.has_key("next_page_token"):
+				siguiente=js3["next_page_token"]
+			for i3 in js3["results"]:
+				cont=cont+1
+				cont2.append(cont)
+				nombres.append(i2["name"])
+				calles.append(i2["formatted_address"])
+				latitud.append(i2["geometry"]["location"]["lat"])
+				longitud.append(i2["geometry"]["location"]["lng"])
+			cont=cont-1
+		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
