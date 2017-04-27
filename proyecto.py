@@ -12,29 +12,7 @@ def inicio():
 @route('/map',method="post")
 @route('/map/<token>',method="post")
 def resultado(token=''):
-	key=os.environ['key']
-	sit = request.forms.get('sitio')
-	lug = request.forms.get('lugar')
-	rad = request.forms.get('radio')
-	urlbase="https://maps.googleapis.com/maps/api/"
-	payload={"address":sit,"sensor":"false"}
-	r=requests.get(urlbase+"geocode/json",params=payload)
-	if r.status_code == 200:
-		js=json.loads(r.text)
-		for i in js["results"]:
-			lat=i["geometry"]["location"]["lat"]
-			lng=i["geometry"]["location"]["lng"]
-		lat_long=str(lat)+","+str(lng)
-		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
-		r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
-		cont=1
-		cont2=[1]
-		nombres=[]
-		calles=[]
-		latitud=[]
-		longitud=[]
-		siguiente="nada"
-	if token=='token':
+		if token=='token':
 		pagina=request.forms.get('next')
 		payload3={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":pagina}
 		r3=requests.post(urlbase+"place/textsearch/json",params=payload2)
@@ -52,6 +30,28 @@ def resultado(token=''):
 			cont=cont-1
 		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
 	else:
+		key=os.environ['key']
+		sit = request.forms.get('sitio')
+		lug = request.forms.get('lugar')
+		rad = request.forms.get('radio')
+		urlbase="https://maps.googleapis.com/maps/api/"
+		payload={"address":sit,"sensor":"false"}
+		r=requests.get(urlbase+"geocode/json",params=payload)
+		if r.status_code == 200:
+			js=json.loads(r.text)
+			for i in js["results"]:
+				lat=i["geometry"]["location"]["lat"]
+				lng=i["geometry"]["location"]["lng"]
+			lat_long=str(lat)+","+str(lng)
+			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
+			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
+			cont=1
+			cont2=[1]
+			nombres=[]
+			calles=[]
+			latitud=[]
+			longitud=[]
+			siguiente="nada"
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			if js2.has_key("next_page_token"):
@@ -64,7 +64,7 @@ def resultado(token=''):
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
 			cont=cont-1
-		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
+		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)	
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
