@@ -17,5 +17,6 @@
 			<input type="submit" value="siguiente">
 		</form>
 	%end
+	<br>
 	{{js2}}
 %include('footer.tpl')
