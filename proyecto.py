@@ -51,7 +51,7 @@ def resultado(token=''):
 				longitud.append(i2["geometry"]["location"]["lng"])
 			cont=cont-1
 		return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2)
-
+	else:
 		if r2.status_code==200:
 			js2=json.loads(r2.text)
 			if js2.has_key("next_page_token"):
