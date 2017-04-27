@@ -15,9 +15,6 @@ def resultado(token=''):
 	key=os.environ['key']
 	if token=='token':
 		pagina = request.forms.get('next')
-		sit = request.forms.get('sitio')
-		lug = request.forms.get('lugar')
-		rad = request.forms.get('radio')
 		urlbase="https://maps.googleapis.com/maps/api/"
 		payload={"address":sit,"sensor":"false"}
 		r=requests.get(urlbase+"geocode/json",params=payload)
