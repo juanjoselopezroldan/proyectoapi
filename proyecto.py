@@ -28,6 +28,7 @@ def resultado():
 		if request.method=="post":
 			token=request.forms.get("next")
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
+			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 		else:
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
