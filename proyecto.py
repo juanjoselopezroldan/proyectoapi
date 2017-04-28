@@ -9,8 +9,8 @@ import requests
 def inicio():
 	    return template ('template.tpl')
 
-@route('/map',method="get")
 @route('/map',method="post")
+@route('/map',method="get")
 def resultado():
 	key=os.environ['key']
 	sit = request.forms.get('sitio')
@@ -25,7 +25,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		if request.method=="post":
+		if request.method=="get":
 			key=os.environ['key']
 			token=request.forms.get("next")
 			sit = request.forms.get('sitio')
