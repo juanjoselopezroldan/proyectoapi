@@ -26,6 +26,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 		if request.method=="post":
+			key=os.environ['key']
 			token=request.forms.get("next")
 			lug = request.forms.get('sitio')
 			rad = request.forms.get('radio')
