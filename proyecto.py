@@ -28,10 +28,10 @@ def resultado():
 		if request.method=="post":
 			key=os.environ['key']
 			token=request.forms.get("next")
-			lug = request.forms.get('sitio')
+			sit = request.forms.get('sitio')
 			rad = request.forms.get('radio')
 			lug = request.forms.get('lugar')
-			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
+			payload2={"location":sit,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
