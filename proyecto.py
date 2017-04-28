@@ -27,6 +27,9 @@ def resultado():
 		lat_long=str(lat)+","+str(lng)
 		if request.method=="post":
 			token=request.forms.get("next")
+			lug = request.forms.get('sitio')
+			rad = request.forms.get('radio')
+			lug = request.forms.get('lugar')
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
@@ -48,7 +51,6 @@ def resultado():
 					latitud.append(i2["geometry"]["location"]["lat"])
 					longitud.append(i2["geometry"]["location"]["lng"])
 				cont=cont-1
-			return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 		else:
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
@@ -71,7 +73,7 @@ def resultado():
 					latitud.append(i2["geometry"]["location"]["lat"])
 					longitud.append(i2["geometry"]["location"]["lng"])
 				cont=cont-1
-			return template('template2.tpl',  siguiente=siguiente, js2=js2, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
+	return template('template2.tpl',  siguiente=siguiente, js2=js2, rad=rad, lug=lug, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, coordenadas=lat_long, clave=key)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):

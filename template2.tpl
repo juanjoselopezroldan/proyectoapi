@@ -13,8 +13,11 @@
 		<br>
 	%end
 	% if siguiente!="nada":
-		<form action="/map" method="post" style="float: left">
+		<form action="/map" method="post">
 			<input type="hidden" name="next" value="{{siguiente}}">
+			<input type="hidden" name="sitio" value="{{coordenadas}}">
+			<input type="hidden" name="radio" value="{{rad}}">
+			<input type="hidden" name="lugar" value="{{lug}}">
 			<input type="submit" value="siguiente">
 		</form>
 	%end
