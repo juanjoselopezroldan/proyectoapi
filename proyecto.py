@@ -52,7 +52,7 @@ def resultado():
 					latitud.append(i2["geometry"]["location"]["lat"])
 					longitud.append(i2["geometry"]["location"]["lng"])
 				cont=cont-1
-				return template('template2.tpl',  siguiente=siguiente, js2=js2, rad=rad, lug=lug, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, coordenadas=lat_long, clave=key)
+				return template('template2.tpl',  siguiente=siguiente, js2=js2, rad=rad, lug=lug, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
 
 		else:
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
