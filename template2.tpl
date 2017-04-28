@@ -13,7 +13,7 @@
 		<br>
 	%end
 	% if siguiente!="nada":
-		<form action="/map/token" method="post" style="float: left">
+		<form action="/map" method="post" style="float: left">
 			<input type="hidden" name="next" value="{{siguiente}}">
 			<input type="submit" value="siguiente">
 		</form>
