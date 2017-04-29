@@ -9,6 +9,7 @@ import requests
 def inicio():
 	    return template ('template.tpl')
 
+@route('/map',method="get")
 @route('/map',method="post")
 def resultado():
 	key=os.environ['key']
