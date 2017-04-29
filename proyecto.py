@@ -18,7 +18,7 @@ def resultado():
 	rad = request.forms.get('radio')
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
-	r=requests.post(urlbase+"geocode/json",params=payload)
+	r=requests.get(urlbase+"geocode/json",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
 		for i in js["results"]:
@@ -58,7 +58,7 @@ def resultado():
 		else:
 			prueba="primero"
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
-			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
+			r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
 			nombres=[]
