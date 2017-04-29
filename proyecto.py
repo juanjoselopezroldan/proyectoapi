@@ -66,6 +66,8 @@ def resultado():
 			latitud=[]
 			longitud=[]
 			siguiente="nada"
+			token=request.forms.get("next")
+
 			if r2.status_code==200:
 				js2=json.loads(r2.text)
 				if js2.has_key("next_page_token"):
