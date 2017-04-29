@@ -9,8 +9,8 @@ import requests
 def inicio():
 	    return template ('template.tpl')
 
-@route('/map',method="post")
 @route('/map',method="get")
+@route('/map/page',method="post")
 def resultado():
 	key=os.environ['key']
 	sit = request.forms.get('sitio')
@@ -25,14 +25,14 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		if request.method=="get":
+		if request.method=="post":
 			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
 			sit = request.forms.get('sitio')
 			rad = request.forms.get('radio')
 			lug = request.forms.get('lugar')
-			payload2={"location":sit,"radius":rad,"query":lug,"key":key,"next_page_token":token}
+			payload2={"key":key,"next_page_token":token}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
