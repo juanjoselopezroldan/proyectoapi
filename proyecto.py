@@ -31,7 +31,7 @@ def resultado():
 			sit = request.forms.get('sitio')
 			rad = request.forms.get('radio')
 			lug = request.forms.get('lugar')
-			payload2={"location":sit,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
+			payload2={"key":key,"next_page_token":token}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
@@ -81,6 +81,6 @@ def resultado():
 @route('/static/<filepath:path>')
 def server_static(filepath):
 	return static_file(filepath, root='static')
-
+#"location":sit,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false",
 if __name__ == '__main__':
 	run(host='0.0.0.0',port=argv[1])

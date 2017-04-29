@@ -1,5 +1,4 @@
 %include('header.tpl')
-{{lat_long}}
 <img src="static/style/1.jpg" width="800" height="400" border="15" align="bottom" />
 <br>
 <br>
