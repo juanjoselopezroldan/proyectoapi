@@ -12,7 +12,8 @@ def inicio():
 @route('/map',method="get")
 @route('/map',method="post")
 def resultado():
-	key=os.environ['key']
+	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
+	#os.environ['key']
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
@@ -25,6 +26,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
+
 	if request.method=="post":
 		prueba="segundo"
 		key=os.environ['key']
