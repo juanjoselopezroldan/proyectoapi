@@ -9,16 +9,20 @@ import requests
 def inicio():
 	    return template ('template.tpl')
 
-@route('/map',method="get")
+@route('/map', method="get")
 @route('/map',method="post")
-def resultado():
-	key=os.environ['key']
+def resultado(sitio,lugar,radio):
+	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
+	#os.environ['key']
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
+	#sit = sitio
+	#lug = lugar
+	#rad = radio
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
-	r=requests.get(urlbase+"geocode/json",params=payload)
+	r=requests.post(urlbase+"geocode/json",params=payload)
 	if r.status_code == 200:
 		js=json.loads(r.text)
 		for i in js["results"]:
@@ -26,7 +30,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 
-		if request.method=="post":
+		if requests.method=="post":
 			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
@@ -34,7 +38,7 @@ def resultado():
 			rad = request.forms.get('radio')
 			lug = request.forms.get('lugar')
 			payload2={"key":key,"next_page_token":token}
-			r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
+			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
 			nombres=[]
@@ -59,7 +63,7 @@ def resultado():
 		else:
 			prueba="primero"
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
-			r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
+			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
 			nombres=[]
