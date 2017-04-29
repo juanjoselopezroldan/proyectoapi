@@ -26,6 +26,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 		if request.method=="post":
+			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
 			sit = request.forms.get('sitio')
@@ -52,9 +53,10 @@ def resultado():
 					latitud.append(i2["geometry"]["location"]["lat"])
 					longitud.append(i2["geometry"]["location"]["lng"])
 				cont=cont-1
-			return template('template2.tpl',  siguiente=siguiente, js2=js2, rad=rad, lug=lug, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
+			return template('template2.tpl', prueba=prueba,  siguiente=siguiente, js2=js2, rad=rad, lug=lug, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
 
 		else:
+			prueba="primero"
 			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
@@ -76,7 +78,7 @@ def resultado():
 					latitud.append(i2["geometry"]["location"]["lat"])
 					longitud.append(i2["geometry"]["location"]["lng"])
 				cont=cont-1
-			return template('template2.tpl',  siguiente=siguiente, js2=js2, rad=rad, lug=lug, lat=lat, lng=lng, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
+			return template('template2.tpl', prueba=prueba ,siguiente=siguiente, js2=js2, rad=rad, lug=lug, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
