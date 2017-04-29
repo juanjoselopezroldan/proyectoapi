@@ -1,6 +1,5 @@
 %include('header.tpl')
 {{lat_long}}
-{{siguiente}}
 {{prueba}}
 <h1>Estos son los resultados de la busqueda realizados cumpliendo los parametros introducidos:</h1>
 <h4>Numero de resultados encontrados: {{cont}}</h4>
@@ -15,7 +14,7 @@
 		<br>
 	%end
 	% if siguiente!="nada":
-		<form action="/map" method="post">
+		<form action="/map/token" method="post">
 			<input type="hidden" name="next" value="{{siguiente}}">
 			<input type="hidden" name="sitio" value="{{lat_long}}">
 			<input type="hidden" name="radio" value="{{rad}}">
