@@ -16,9 +16,6 @@ def resultado():
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
-	#sit = sitio
-	#lug = lugar
-	#rad = radio
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload={"address":sit,"sensor":"false"}
 	r=requests.get(urlbase+"geocode/json",params=payload)
@@ -29,7 +26,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 
-		if requests.method=="post":
+		if request.method=="post":
 			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
