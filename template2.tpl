@@ -14,7 +14,7 @@
 		<br>
 	%end
 	% if siguiente!="nada":
-		<form action="/map/page" method="post">
+		<form action="/map" method="post">
 			<input type="hidden" name="next" value="{{siguiente}}">
 			<input type="hidden" name="sitio" value="{{lat_long}}">
 			<input type="hidden" name="radio" value="{{rad}}">
