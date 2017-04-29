@@ -9,8 +9,7 @@ import requests
 def inicio():
 	    return template ('template.tpl')
 
-@route('/map',method="get")
-@route('/map/page',method="post")
+@route('/map',method="post")
 def resultado():
 	key=os.environ['key']
 	sit = request.forms.get('sitio')
