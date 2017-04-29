@@ -25,7 +25,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		if request.method=="post":
+		if request.method=="get":
 			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
@@ -57,7 +57,7 @@ def resultado():
 
 		else:
 			prueba="primero"
-			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key,"next_page_token":token}
+			payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 			r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 			cont=1
 			cont2=[1]
