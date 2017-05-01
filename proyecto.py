@@ -27,7 +27,7 @@ def resultado():
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
 
-		if request.method=="post":
+		if requests.method=="get":
 			prueba="segundo"
 			key=os.environ['key']
 			token=request.forms.get("next")
