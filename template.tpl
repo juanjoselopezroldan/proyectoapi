@@ -1,8 +1,8 @@
 %include('header.tpl')
-<img src="static/style/1.jpg" width="800" height="400" border="15" align="bottom" />
+<img src="static/style/1.jpg" width="800" height="400" ablign="bottom" />
 <br>
 <br>
-<div align="rigth">
+<div>
 
 	<form action="/map" method="post" style="float: left">
 		<label>Sitio (Ej. "Sevilla", "C/Oripo"):</label>
