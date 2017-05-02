@@ -54,7 +54,7 @@ def resultado2():
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload2={"key":key,"pagetoken":token}
 	r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
-	cont=1
+	cont=21
 	cont2=[1]
 	nombres=[]
 	calles=[]
