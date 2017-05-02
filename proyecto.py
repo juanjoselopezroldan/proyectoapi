@@ -44,7 +44,7 @@ def resultado():
 				calles.append(i2["formatted_address"])
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
-			con=con-1
+			cont=cont-1
 		return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)		
 
 @route('/map',method="get")
@@ -72,7 +72,7 @@ def resultado2():
 			calles.append(i2["formatted_address"])
 			latitud.append(i2["geometry"]["location"]["lat"])
 			longitud.append(i2["geometry"]["location"]["lng"])
-		con=con-1
+		cont=cont-1
 	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
 
