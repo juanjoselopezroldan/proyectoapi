@@ -46,7 +46,7 @@ def resultado():
 				calles.append(i2["formatted_address"])
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
-			cont=cont-1
+			con=con-1
 		return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, con=con, cont=cont, cont2=cont2, clave=key)		
 
 @route('/map',method="get")
@@ -56,7 +56,7 @@ def resultado2():
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload2={"key":key,"pagetoken":token}
 	r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
-	con=1
+	con=21
 	cont=21
 	cont2=[21]
 	nombres=[]
@@ -76,7 +76,7 @@ def resultado2():
 			calles.append(i2["formatted_address"])
 			latitud.append(i2["geometry"]["location"]["lat"])
 			longitud.append(i2["geometry"]["location"]["lng"])
-		cont=cont-1
+		con=con-1
 	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, con=con, cont=cont, cont2=cont2, clave=key)
 
 
