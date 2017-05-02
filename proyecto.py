@@ -24,7 +24,6 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		prueba="primero"
 		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 		r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 		cont=1
@@ -46,12 +45,11 @@ def resultado():
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
 			cont=cont-1
-		return template('template2.tpl', prueba=prueba ,siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)		
+		return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)		
 
 @route('/map',method="get")
 def resultado2():
 	token=request.query.spag
-	prueba="segundo"
 	key=os.environ['key']
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload2={"key":key,"pagetoken":token}
@@ -75,7 +73,7 @@ def resultado2():
 			latitud.append(i2["geometry"]["location"]["lat"])
 			longitud.append(i2["geometry"]["location"]["lng"])
 		cont=cont-1
-	return template('template2.tpl', prueba=prueba,  siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
+	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
 
 @route('/static/<filepath:path>')
