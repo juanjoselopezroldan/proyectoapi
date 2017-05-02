@@ -1,5 +1,4 @@
 %include('header.tpl')
-{{lat_long}}
 {{prueba}}
 <h1>Estos son los resultados de la busqueda realizados cumpliendo los parametros introducidos:</h1>
 <h4>Numero de resultados encontrados: {{cont}}</h4>
@@ -14,7 +13,7 @@
 		<br>
 	%end
 	% if siguiente!="nada":
-		<form action="/map/" method="get">
+		<form action="/map" method="get">
 			<input type="hidden" name="spag" value="{{siguiente}}">
 			<input type="submit" value="siguiente">
 		</form>

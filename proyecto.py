@@ -11,8 +11,7 @@ def inicio():
 
 @route('/map',method="post")
 def resultado():
-	key="AIzaSyBjWDRtMKtmvWpivRoLhA36w4TA6Rzxt70"
-	#os.environ['key']
+	key=os.environ['key']
 	sit = request.forms.get('sitio')
 	lug = request.forms.get('lugar')
 	rad = request.forms.get('radio')
@@ -47,18 +46,15 @@ def resultado():
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
 			cont=cont-1
-		return template('template2.tpl', prueba=prueba ,siguiente=siguiente, js2=js2, rad=rad, lug=lug, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)		
+		return template('template2.tpl', prueba=prueba ,siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)		
 
-@route('/map/<spag>',method="get")
-def resultado2(spag):
+@route('/map',method="get")
+def resultado2():
+	token=request.query.spag
 	prueba="segundo"
 	key=os.environ['key']
-	token = spag
-	#token=request.forms.get("next")
-	#sit = request.forms.get('sitio')
-	#rad = request.forms.get('radio')
-	#lug = request.forms.get('lugar')
-	payload2={"key":key,"next_page_token":token}
+	urlbase="https://maps.googleapis.com/maps/api/"
+	payload2={"key":key,"pagetoken":token}
 	r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
 	cont=1
 	cont2=[1]
@@ -79,12 +75,8 @@ def resultado2(spag):
 			latitud.append(i2["geometry"]["location"]["lat"])
 			longitud.append(i2["geometry"]["location"]["lng"])
 		cont=cont-1
-	return template('template2.tpl', prueba=prueba,  siguiente=siguiente, js2=js2, rad=rad, lug=lug, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, lat_long=lat_long, clave=key)
+	return template('template2.tpl', prueba=prueba,  siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
-
-#			<input type="hidden" name="sitio" value="{{lat_long}}">
-#			<input type="hidden" name="radio" value="{{rad}}">
-#			<input type="hidden" name="lugar" value="{{lug}}">
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
