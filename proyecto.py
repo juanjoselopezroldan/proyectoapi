@@ -39,6 +39,7 @@ def resultado():
 			if js2.has_key("next_page_token"):
 				siguiente=js2["next_page_token"]
 			for i2 in js2["results"]:
+				con=con+1
 				cont=cont+1
 				cont2.append(cont)
 				nombres.append(i2["name"])
@@ -68,6 +69,7 @@ def resultado2():
 		if js2.has_key("next_page_token"):
 			siguiente=js2["next_page_token"]
 		for i2 in js2["results"]:
+			con=con+1
 			cont=cont+1
 			cont2.append(cont)
 			nombres.append(i2["name"])
