@@ -26,7 +26,6 @@ def resultado():
 		lat_long=str(lat)+","+str(lng)
 		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 		r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
-		con=1
 		cont=1
 		cont2=[1]
 		nombres=[]
@@ -47,7 +46,7 @@ def resultado():
 				latitud.append(i2["geometry"]["location"]["lat"])
 				longitud.append(i2["geometry"]["location"]["lng"])
 			con=con-1
-		return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, con=con, cont=cont, cont2=cont2, clave=key)		
+		return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)		
 
 @route('/map',method="get")
 def resultado2():
@@ -56,7 +55,6 @@ def resultado2():
 	urlbase="https://maps.googleapis.com/maps/api/"
 	payload2={"key":key,"pagetoken":token}
 	r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
-	con=21
 	cont=1
 	cont2=[1]
 	nombres=[]
@@ -77,7 +75,7 @@ def resultado2():
 			latitud.append(i2["geometry"]["location"]["lat"])
 			longitud.append(i2["geometry"]["location"]["lng"])
 		con=con-1
-	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, con=con, cont=cont, cont2=cont2, clave=key)
+	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
 
 @route('/static/<filepath:path>')

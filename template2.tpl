@@ -1,6 +1,6 @@
 %include('header.tpl')
 <h1>Estos son los resultados de la busqueda realizados cumpliendo los parametros introducidos:</h1>
-<h4>Numero de resultados encontrados en esta pagina: {{con}}</h4>
+<h4>Numero de resultados encontrados en esta pagina: {{cont}}</h4>
 <br>
 	% for a,e,c,la,lo in zip(nombre,calle,cont2,latitud,longitud):
 	<h4>Resultado numero {{c}}</h4>
