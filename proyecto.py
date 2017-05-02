@@ -57,8 +57,8 @@ def resultado2():
 	payload2={"key":key,"pagetoken":token}
 	r2=requests.get(urlbase+"place/textsearch/json",params=payload2)
 	con=21
-	cont=21
-	cont2=[21]
+	cont=1
+	cont2=[1]
 	nombres=[]
 	calles=[]
 	latitud=[]
