@@ -5,7 +5,6 @@
   <title>The Power Search</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="robots" content="noindex,nofollow" />
   <link rel="stylesheet" type="text/css" href="static/style/style.css" />
 </head>
 
