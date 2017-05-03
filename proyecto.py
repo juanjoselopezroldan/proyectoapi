@@ -9,6 +9,8 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 from urlparse import parse_qs
 
+#Parte de twitter
+
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
 ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
@@ -39,6 +41,8 @@ def get_access_token(TOKENS):
   credentials = parse_qs(r.content)
   TOKENS["access_token"] = credentials.get('oauth_token')[0]
   TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+
+#Parte de buscador
 
 @route('/',method="get")
 def inicio():
@@ -111,6 +115,8 @@ def resultado2():
 		cont=cont-1
 	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
+
+#Parte de twitter
 @post('/twitter')
 def twitter():
     get_request_token()
