@@ -25,7 +25,7 @@ def resultado():
 			lat=i["geometry"]["location"]["lat"]
 			lng=i["geometry"]["location"]["lng"]
 		lat_long=str(lat)+","+str(lng)
-		payload2={"location":lat_long,"language":"es","radius":rad,"query":lug,"keyword":"cruise","sensor":"false","key":key}
+		payload2={"location":lat_long,"language":"es","radius":rad1,"query":lug,"keyword":"cruise","sensor":"false","key":key}
 		r2=requests.post(urlbase+"place/textsearch/json",params=payload2)
 		cont=1
 		cont2=[1]
