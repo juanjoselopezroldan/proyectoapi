@@ -1,9 +1,13 @@
 import bottle
-from bottle import Bottle,route,run,request,template,static_file
+from bottle import Bottle,route,run,request,template,static_file,redirect,get,post,default_app,response,get,post
 import json
 import os
 from sys import argv
 import requests
+from requests_oauthlib import OAuth1
+from requests_oauthlib import OAuth2Session
+from oauthlib.oauth2 import TokenExpiredError
+from urlparse import parse_qs
 
 @route('/',method="get")
 def inicio():
@@ -163,5 +167,4 @@ def twitter_logout():
 def server_static(filepath):
 	return static_file(filepath, root='static')
 
-if __name__ == '__main__':
-	run(host='0.0.0.0',port=argv[1])
+run(host='0.0.0.0',port=argv[1])
