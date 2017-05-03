@@ -86,10 +86,11 @@ ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 CONSUMER_KEY = os.environ["CONSUMER_KEY"]
 CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
 TOKENS = {}
+
 def get_request_token():
     oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-    )
+    				client_secret=CONSUMER_SECRET,
+	)
     r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
     credentials = parse_qs(r.content)
     TOKENS["request_token"] = credentials.get('oauth_token')[0]
