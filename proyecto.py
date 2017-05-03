@@ -88,7 +88,7 @@ CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
 TOKENS = {}
 def get_request_token():
 	oauth = OAuth1(CONSUMER_KEY,
-		client_secret=CONSUMER_SECRET,
+					client_secret=CONSUMER_SECRET,
 	)
 	r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
 	credentials = parse_qs(r.content)
@@ -97,10 +97,10 @@ def get_request_token():
 
 def get_access_token(TOKENS):
 	oauth = OAuth1(CONSUMER_KEY,
-		client_secret=CONSUMER_SECRET,
-		resource_owner_key=TOKENS["request_token"],
-		resource_owner_secret=TOKENS["request_token_secret"],
-		verifier=TOKENS["verifier"],)
+					client_secret=CONSUMER_SECRET,
+					resource_owner_key=TOKENS["request_token"],
+					resource_owner_secret=TOKENS["request_token_secret"],
+					verifier=TOKENS["verifier"],)
 r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
 credentials = parse_qs(r.content)
 TOKENS["access_token"] = credentials.get('oauth_token')[0]
@@ -131,7 +131,7 @@ def twittear():
 	if request.get_cookie("url", secret='some-secret-key'):
 		url=request.get_cookie("url", secret='some-secret-key')
 	else:
-		url="no tengo resultado"
+		url="No hay resultados"
 	if request.get_cookie("access_token", secret='some-secret-key'):
 		TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
 		TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -148,9 +148,14 @@ def tweet_submit():
 	print CONSUMER_SECRET
 	print TOKENS["access_token"]
 	print TOKENS["access_token_secret"]
-	oauth = OAuth1(CONSUMER_KEY,client_secret=CONSUMER_SECRET,resource_owner_key=TOKENS["access_token"],resource_owner_secret=TOKENS["access_token_secret"])
+	oauth = OAuth1(CONSUMER_KEY,
+					client_secret=CONSUMER_SECRET,
+					resource_owner_key=TOKENS["access_token"],
+					resource_owner_secret=TOKENS["access_token_secret"])
 	url = 'https://api.twitter.com/1.1/statuses/update.json'
-	r = requests.post(url=url,data={"status":texto},auth=oauth)
+	r = requests.post(url=url,
+						data={"status":texto},
+						auth=oauth)
 
 	if r.status_code == 200:
 		return "<p>Tweet properly sent</p>"
