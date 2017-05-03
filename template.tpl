@@ -4,6 +4,7 @@
 <br>
 <div>
 
+
 	<form action="/map" method="post" style="float: left">
 		<label>Sitio (Ej. "Sevilla", "C/Oripo"):</label>
 		<input type="text" name="sitio" required/><br>

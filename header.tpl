@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="static/style/style.css" />
 </head>
 
+
 <body>
   <div id="main">
     <div id="header">
