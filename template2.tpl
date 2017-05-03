@@ -9,19 +9,6 @@
 		<h5><b> ↓ <u>Pincha en la imagen del mapa para asi acceder al mapa</u> ↓ </b></h5>
 		<a href="https://www.google.es/maps/@{{la}},{{lo}},20z?hl=es"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key={{clave}}"></a>
 		<br>
-		<script src="http://maps.google.com/maps/api/js?sensor=false&callback=iniciar">
-		</script>
-
-		<script>
-		function iniciar() {
-		var mapOptions = {
-		center: new google.maps.LatLng({la}},{{lo}}),
-		zoom: 10,
-		mapTypeId: google.maps.MapTypeId.ROADMAP};
-		var map = new google.maps.Map(document.getElementById("map"),mapOptions);}		
-		</script>
-
-		<div id="map"></div>
 		<br>
 	%end
 	% if siguiente!="nada":
