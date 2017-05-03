@@ -9,6 +9,37 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 from urlparse import parse_qs
 
+REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
+AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
+ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
+CONSUMER_KEY = os.environ["CONSUMER_KEY"]
+CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
+TOKENS = {}
+
+
+def get_request_token():
+    oauth = OAuth1(CONSUMER_KEY,
+    				client_secret=CONSUMER_SECRET,
+	)
+    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
+    credentials = parse_qs(r.content)
+    TOKENS["request_token"] = credentials.get('oauth_token')[0]
+    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
+    
+def get_access_token(TOKENS):
+  
+  oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["request_token"],
+                   resource_owner_secret=TOKENS["request_token_secret"],
+                   verifier=TOKENS["verifier"],)
+  
+  
+  r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
+  credentials = parse_qs(r.content)
+  TOKENS["access_token"] = credentials.get('oauth_token')[0]
+  TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+
 @route('/',method="get")
 def inicio():
 	    return template ('template.tpl')
@@ -79,36 +110,6 @@ def resultado2():
 			longitud.append(i2["geometry"]["location"]["lng"])
 		cont=cont-1
 	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
-
-REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
-CONSUMER_KEY = os.environ["CONSUMER_KEY"]
-CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
-TOKENS = {}
-
-def get_request_token():
-    oauth = OAuth1(CONSUMER_KEY,
-    				client_secret=CONSUMER_SECRET,
-	)
-    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    TOKENS["request_token"] = credentials.get('oauth_token')[0]
-    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
-    
-def get_access_token(TOKENS):
-  
-  oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-                   resource_owner_key=TOKENS["request_token"],
-                   resource_owner_secret=TOKENS["request_token_secret"],
-                   verifier=TOKENS["verifier"],)
-  
-  
-  r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
-  credentials = parse_qs(r.content)
-  TOKENS["access_token"] = credentials.get('oauth_token')[0]
-  TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
 @post('/twitter')
 def twitter():
