@@ -9,7 +9,7 @@
 		<h5><b> ↓ <u>Pincha en la imagen del mapa para asi acceder al mapa</u> ↓ </b></h5>
 		<a href="https://www.google.es/maps/@{{la}},{{lo}},20z?hl=es"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key={{clave}}"></a>
 		<br>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12698.178238023742!2d{{la}}!3d{{lo}}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1493801575504" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12698.178238023742!2d{{lo}}!3d{{la}}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1493801575504" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		<br>
 	%end
 	% if siguiente!="nada":
