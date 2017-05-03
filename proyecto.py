@@ -76,6 +76,8 @@ def resultado2():
 		cont=cont-1
 	return template('template2.tpl', siguiente=siguiente, latitud=latitud, longitud=longitud, nombre=nombres, calle=calles, cont=cont, cont2=cont2, clave=key)
 
+@router('/twitter')
+def compartir():
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
