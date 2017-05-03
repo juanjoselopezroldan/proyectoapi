@@ -6,3 +6,5 @@ packaging
 pytz
 requests
 six
+requests_oauthlib
+oauthlib
