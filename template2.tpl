@@ -8,7 +8,7 @@
 		<h6>Calle: {{e}}</h6>
 		<h5><b> ↓ <u>Pincha en la imagen del mapa para asi acceder al mapa</u> ↓ </b></h5>
 		<a href="https://www.google.es/maps/@{{la}},{{lo}},20z?hl=es"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key={{clave}}"></a>
-
+		<br>
 		<h5><b><u>Si le ha gustado este lugar puede compartirlo via Twitter</u></b></h5>
 		<form action="/twitter" method="post">
             <input type="hidden" name="url" value="https://www.google.es/maps/@{{la}},{{lo}},20z"/>
