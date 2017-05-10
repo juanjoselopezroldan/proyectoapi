@@ -9,7 +9,7 @@
 		<h5><b> ↓ <u>Pincha en la imagen del mapa para asi acceder al mapa</u> ↓ </b></h5>
 		<a href="https://www.google.es/maps/@{{la}},{{lo}},20z?hl=es"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{la}}, {{lo}}&zoom=17&size=400x400&maptype=roadmap&key={{clave}}"></a>
 
-		<h5><b><u>Si le ha gustado este lugar puede compartirlo via Twitter</u></b><img src="static/style/0.png" width="20" height="10" alt="" />
+		<h5><b><u>Si le ha gustado este lugar puede compartirlo via Twitter</u></b><img src="static/style/0.png" width="50" height="45" alt="" />
 </h5>
 		<form action="/twitter" method="post">
             <input type="hidden" name="url" value="https://www.google.es/maps/@{{la}},{{lo}},20z"/>
