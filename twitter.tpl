@@ -1,7 +1,4 @@
 %include('header.tpl')
-    <title>.::Twitter::.</title>
-  </head>
-  <body>
     <h2>Comparte el lugar en el que has estado o tus lugares favoritos con tus seguidores:</h2>
     <br />
     <form action="/twittear" method="post">
@@ -10,5 +7,4 @@
       </textarea></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
- </body>
 %include('footer.tpl')
