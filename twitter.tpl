@@ -5,7 +5,7 @@
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
         Me ha gustado este lugar: {{url}}
-      </textarea><img src="static/style/0.png" width="100" height="80" alt="" /></p>
+      </textarea><img src="static/style/0.png" width="80" height="70" alt="" /></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
 %include('footer.tpl')
