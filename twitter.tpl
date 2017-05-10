@@ -7,4 +7,5 @@
       </textarea></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
+
 %include('footer.tpl')
