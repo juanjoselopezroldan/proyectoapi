@@ -6,6 +6,6 @@
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
         Me ha gustado este lugar: {{url}}
       </textarea></p>
-      <p><input type="submit" class="button" value="Enviar" /><img src="static/style/0.png" width="50" height="45" alt="" align="rigth" /></p>
+      <p><img src="static/style/0.png" width="35" height="30" alt="" /><input type="submit" class="button" value="Enviar" /></p>
     </form>
 %include('footer.tpl')
