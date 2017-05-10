@@ -1,7 +1,7 @@
 %include('header.tpl')
     <h2>Comparte el lugar en el que has estado o tus lugares favoritos con tus seguidores:</h2>
     <br />
-    <img src="static/style/0.png" width="400" height="200" alt="" align="rigth" />
+    <img src="static/style/0.png" width="100" height="80" alt="" align="rigth" />
 
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
