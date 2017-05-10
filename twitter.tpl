@@ -2,7 +2,7 @@
     <title>.::Twitter::.</title>
   </head>
   <body>
-    <h2>Buen momento para un tweet:</h2>
+    <h2>Comparte el lugar en el que has estado o tus lugares favoritos con tus seguidores:</h2>
     <br />
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
