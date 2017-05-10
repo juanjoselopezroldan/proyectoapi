@@ -9,7 +9,7 @@ from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 from urlparse import parse_qs
 
-#Parte de twitter
+#Parte de autenticacion de twitter
 
 REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
