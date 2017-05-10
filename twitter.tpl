@@ -3,7 +3,7 @@
     <br />
 
     <form action="/twittear" method="post">
-      <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
+      <p><textarea name="tweet" id="textbox" rows="3" cols="100" maxlength="80">
         Me ha gustado este lugar: {{url}}
       </textarea><img src="static/style/0.png" width="35" height="30" alt="" /></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
